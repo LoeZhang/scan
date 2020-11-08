@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.king.zxing.ViewfinderView
+        android:id="@+id/viewfinderView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cornerColor="#fff"
+        app:frameColor="#4fff"
+        app:labelText="请将二维码、条形码置入框内"
+        app:labelTextLocation="bottom"
+        app:labelTextSize="12dp"
+        app:laserColor="#fff"
+        app:laserStyle="line"
+        app:maskColor="#8000"
+        app:resultPointColor="#f60" />
+
+    <FrameLayout
+        android:id="@+id/viewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:onClick="back"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:src="@mipmap/scan_back" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="扫描"
+            android:textColor="#fff"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/buttonLight"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_gravity="right"
+            android:paddingHorizontal="15dp"
+            android:clickable="true"
+            android:onClick="clickLight"
+            android:scaleX="0.8"
+            android:src="@drawable/scan_light_selector" />
+
+    </FrameLayout>
+
+    <com.loe.scan.ScanAlphaLinearLayout
+        android:onClick="album"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="25dp"
+        android:alpha="0.85"
+        android:layout_gravity="bottom|center"
+        android:orientation="horizontal">
+        <TextView
+            android:textColor="#fff"
+            android:layout_marginRight="-17dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="13dp"
+            android:text="从相册选择"/>
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:paddingLeft="17dp"
+            android:scaleX="-1"
+            android:paddingRight="17dp"
+            android:src="@mipmap/scan_back" />
+    </com.loe.scan.ScanAlphaLinearLayout>
+
+</FrameLayout>
