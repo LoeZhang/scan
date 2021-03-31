@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager;
 
 public class ScanResultUtil
 {
-    private static final String TAG = "CameraResultUtil";
+    private static final String TAG = "ScanResultUtil";
 
     public static void startResult(FragmentActivity activity, Intent intent, OnActivityResultListener listener)
     {
@@ -22,7 +22,7 @@ public class ScanResultUtil
                     .commitNowAllowingStateLoss();
         }
         fragment.listener = listener;
-        fragment.startActivityForResult(intent, 14);
+        fragment.startActivityForResult(intent, 41);
     }
 
     public static class ActivityResultFragment extends Fragment
@@ -40,7 +40,7 @@ public class ScanResultUtil
         public void onActivityResult(int requestCode, int resultCode, Intent data)
         {
             super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode != 14) return;
+            if (requestCode != 41) return;
 
             if (listener != null)
             {
